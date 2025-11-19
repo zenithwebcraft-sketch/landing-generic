@@ -30,14 +30,14 @@ const ContentSection = () => {
     <section className="py-20 md:py-32 bg-gray-900">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            ¿QUÉ INCLUYE TU LANDING PAGE
+        <div className="text-center mb-16 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            ¿QUÉ INCLUYE TU<br className="sm:hidden" /> LANDING PAGE
           </h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
             DE ALTA CONVERSIÓN?
           </h3>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
             La página completa con todo lo necesario para vender
           </p>
         </div>
@@ -92,9 +92,11 @@ const ContentSection = () => {
               <Button 
                 onClick={handleCTAClick}
                 size="lg"
-                className="w-full bg-primary hover:bg-primary/90 text-gray-900 font-bold text-lg py-7 rounded-lg shadow-2xl hover:shadow-primary/50 transition-all duration-300"
+                className="w-full bg-primary hover:bg-primary/90 text-gray-900 font-bold text-base sm:text-lg py-6 sm:py-7 rounded-lg shadow-2xl hover:shadow-primary/50 transition-all duration-300"
               >
-                OBTENER MI LANDING PAGE POR SOLO $49.99
+                <span className="text-center leading-tight">
+                  OBTENER MI LANDING PAGE<br className="sm:hidden" /> POR SOLO $49.99
+                </span>
               </Button>
 
               <p className="text-xs text-gray-500 mt-4">

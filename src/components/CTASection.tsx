@@ -23,10 +23,10 @@ const CTASection = () => {
 
         {/* Main Headline */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-tight px-4">
             TU ACCESO INSTANTÁNEO A
           </h2>
-          <h3 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+          <h3 className="text-3xl sm:text-4xl md:text-6xl font-bold text-primary mb-6 px-4">
             TODO ESTO:
           </h3>
         </div>
@@ -67,10 +67,12 @@ const CTASection = () => {
           <Button 
             onClick={handleCTAClick}
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-gray-900 font-bold text-xl px-12 py-8 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 group"
+            className="bg-primary hover:bg-primary/90 text-gray-900 font-bold text-base sm:text-xl px-8 sm:px-12 py-7 sm:py-8 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 group w-full max-w-2xl mx-auto"
           >
-            OBTENER MI LANDING PAGE POR SOLO $49.99
-            <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+            <span className="text-center leading-tight">
+              OBTENER MI LANDING PAGE<br className="sm:hidden" /> POR SOLO $49.99
+            </span>
+            <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </Button>
           <p className="text-sm text-gray-400 mt-4">
             💳 Pago 100% seguro • Garantía de 7 días

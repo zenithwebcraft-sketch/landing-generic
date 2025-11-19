@@ -28,10 +28,10 @@ const BenefitsSection = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            LA TRANSFORMACIÓN PARA TU NEGOCIO
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 px-4 leading-tight">
+            LA TRANSFORMACIÓN<br className="sm:hidden" /> PARA TU NEGOCIO
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto px-4">
             No es solo una landing page, es tu nuevo canal de ventas 24/7
           </p>
         </div>

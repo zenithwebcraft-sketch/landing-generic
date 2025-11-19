@@ -48,10 +48,12 @@ const HeroSection = () => {
         <Button 
           onClick={handleCTAClick}
           size="lg"
-          className="bg-primary hover:bg-primary/90 text-gray-900 font-bold text-lg px-10 py-7 rounded-lg shadow-2xl hover:shadow-primary/50 transition-all duration-300 group"
+          className="bg-primary hover:bg-primary/90 text-gray-900 font-bold text-base sm:text-lg px-6 sm:px-10 py-6 sm:py-7 rounded-lg shadow-2xl hover:shadow-primary/50 transition-all duration-300 group w-full max-w-md mx-auto"
         >
-          OBTENER MI LANDING PAGE POR SOLO $49.99
-          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          <span className="text-center leading-tight">
+            OBTENER MI LANDING PAGE<br className="sm:hidden" /> POR SOLO $49.99
+          </span>
+          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
         </Button>
 
         {/* Social Proof */}
