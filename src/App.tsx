@@ -1,4 +1,4 @@
-import MetaPixel from '@/components/MetaPixel';  // ← AGREGAR esta línea al inicio
+import MetaPixel from '@/components/MetaPixel'; 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
