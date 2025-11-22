@@ -1,10 +1,13 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { FileText, Palette, Globe, Mail, Gift } from "lucide-react";
-import { useTranslation } from "@/translations";
+import { useTranslation } from '@/hooks/useTranslation';
+import { FileText, Palette, Globe, Mail, Gift } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const BonusesSection = () => {
   const { t } = useTranslation();
 
+  // Nota: Como cambiaste los bonos a "Smart Checkout" y "Infraestructura",
+  // idealmente luego deberías importar iconos como 'CreditCard' y 'Zap' 
+  // para reemplazar FileText y Palette. Por ahora dejo los que tenías para que no de error.
   const icons = [FileText, Palette, Globe, Mail];
 
   const totalValue = t.bonuses.items.reduce((sum, bonus) => {
@@ -31,38 +34,37 @@ const BonusesSection = () => {
           </p>
         </div>
 
-        <div key={index} className="bg-[#1A1F2E] p-5 rounded-xl border border-gray-800 flex gap-4">
-          
-          {/* 1. COLUMNA IZQUIERDA: El Icono (Fijo) */}
-          <div className="shrink-0 w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center text-2xl border border-white/10">
-            {/* Mantén tu lógica de iconos aquí. Ejemplo: */}
-            {index === 0 && "📄"}
-            {index === 1 && "🎨"}
-            {index === 2 && "🌐"}
-            {index === 3 && "📧"}
-          </div>
-
-          {/* 2. COLUMNA DERECHA: Contenido (Flexible) */}
-          <div className="flex-1 min-w-0"> {/* min-w-0 es EL TRUCO para evitar desbordes */}
-            
-            {/* Fila Superior: Título + Precio */}
-            <div className="flex justify-between items-start gap-3 mb-2">
-              <h3 className="text-lg font-bold text-white uppercase leading-tight">
-                {item.title}
-              </h3>
-              <span className="text-lg font-bold text-[#FCD34D] shrink-0">
-                {item.value}
-              </span>
-            </div>
-
-            {/* Fila Inferior: Descripción */}
-            <p className="text-gray-400 text-sm leading-relaxed">
-              {item.description}
-            </p>
-          </div>
-
-        </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+          {t.bonuses.items.map((bonus, index) => {
+            const Icon = icons[index];
+            return (
+              <Card key={index} className="bg-gray-900 border-gray-700 hover:border-primary/50 transition-all duration-300 group">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    {/* Columna Icono */}
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                    </div>
+                    
+                    {/* Columna Texto - AQUÍ ESTÁ EL ARREGLO (min-w-0) */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex justify-between items-start gap-3 mb-2">
+                        <h3 className="font-bold text-white text-lg leading-tight uppercase break-words">
+                          {bonus.title}
+                        </h3>
+                        <span className="text-primary font-bold text-lg shrink-0 ml-2">
+                          {bonus.value}
+                        </span>
+                      </div>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {bonus.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             );
           })}
         </div>
