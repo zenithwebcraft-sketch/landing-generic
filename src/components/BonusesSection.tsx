@@ -1,6 +1,6 @@
-import { useTranslation } from '@/hooks/useTranslation';
-import { FileText, Palette, Globe, Mail, Gift } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from "@/components/ui/card";
+import { FileText, Palette, Globe, Mail, Gift } from "lucide-react";
+import { useTranslation } from "@/translations";
 
 const BonusesSection = () => {
   const { t } = useTranslation();
