@@ -190,14 +190,14 @@ export const translations = {
       subtitle: "Todo lo que necesitas para que tu nueva landing page convierta desde el primer día",
       items: [
         {
-          title: "Guía de Copywriting para Landing Pages",
-          description: "Aprende a escribir textos que venden. Incluye plantillas, ejemplos reales y fórmulas probadas para aumentar conversiones.",
-          value: "$97"
+          title: "Sistema de 'Smart Checkout' Geclocalizado",
+          description: "Tecnología inteligente que adapta la pasarela de pago según el país del visitante (Hotmart para Latam, Stripe/PayPal para el resto del mundo) para maximizar tus ventas.",
+          value: "$197"
         },
         {
-          title: "Kit de Diseño: Paleta + Psicología del Color",
-          description: "Elige los colores perfectos que generen confianza y acción. Incluye paletas pre-diseñadas y guía de implementación.",
-          value: "$67"
+          title: "Infraestructura Global de Alta Velocidad",
+          description: "Alojamiento en redes CDN de última generación con detección automática de idioma. Tu página volará y se adaptará al usuario, sin importar dónde esté.",
+          value: "$147"
         },
         {
           title: "Setup Completo de Dominio y Hosting",
@@ -214,7 +214,7 @@ export const translations = {
       free: "100% GRATIS",
       investment: "Tu inversión:",
       only: "Solo $49.99",
-      valueStatement: "Obtienes $346.99 en valor por solo $49.99"
+      valueStatement: "Obtienes $477 en valor por solo $49.99"
     },
 
     // FAQ Section
@@ -463,14 +463,14 @@ export const translations = {
       subtitle: "Everything you need for your new sales page to convert from day one",
       items: [
         {
-          title: "Copywriting Guide for Sales Pages",
-          description: "Learn to write texts that sell. Includes templates, real examples and proven formulas to increase conversions.",
-          value: "$97"
+          title: "Geo-Located Smart Checkout System",
+          description: "Smart technology that adapts the payment gateway based on the visitor's country (Hotmart for Latam, Card/PayPal for the rest of the world) to maximize your conversion rates.",
+          value: "$197"
         },
         {
-          title: "Design Kit: Palette + Color Psychology",
-          description: "Choose the perfect colors that generate trust and action. Includes pre-designed palettes and implementation guide.",
-          value: "$67"
+          title: "High-Speed Global Infrastructure",
+          description: "Hosting on state-of-the-art CDN networks with automatic language detection. Your page will load instantly and adapt to the user, no matter where they are.",
+          value: "$147"
         },
         {
           title: "Complete Domain and Hosting Setup",
@@ -487,7 +487,7 @@ export const translations = {
       free: "100% FREE",
       investment: "Your investment:",
       only: "Only $49.99",
-      valueStatement: "You get $346.99 in value for only $49.99"
+      valueStatement: "You get $477 in value for only $49.99"
     },
 
     // FAQ Section
