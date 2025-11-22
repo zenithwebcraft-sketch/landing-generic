@@ -8,16 +8,16 @@ export const translations = {
     // Hero Section
     hero: {
       brand: "ZenithWebCraft",
-      title1: "TU SALES PAGE",
+      title1: "TU LANDING PAGE",
       title2: "PROFESIONAL",
       title3: "LISTA EN 48 HORAS",
-      subtitle: "Convierte visitantes en clientes con una sales page diseñada para vender.",
+      subtitle: "Convierte visitantes en clientes con una landing page diseñada para vender.",
       description: "Sin complicaciones técnicas. Sin código. Sin estrés.",
       originalPrice: "$240",
       currentPrice: "$49.99",
       paymentNote: "Pago único • Sin mensualidades",
-      ctaButton: "OBTENER MI SALES PAGE POR SOLO $49.99",
-      socialProof: "Más de 50 sales pages entregadas",
+      ctaButton: "OBTENER MI LANDING PAGE POR SOLO $49.99",
+      socialProof: "Más de 50 landing pages entregadas",
       badge1: "48h",
       badge1Text: "Entrega Garantizada",
       badge2: "100%",
@@ -29,11 +29,11 @@ export const translations = {
     // Content Section
     content: {
       title1: "¿QUÉ INCLUYE TU",
-      title2: "SALES PAGE",
+      title2: "LANDING PAGE",
       title3: "DE ALTA CONVERSIÓN?",
       subtitle: "La página completa con todo lo necesario para vender",
       features: [
-        "Sales Page Profesional de Alta Conversión - Valor: $240",
+        "Landing Page Profesional de Alta Conversión - Valor: $240",
         "Guía de Copywriting en PDF - Valor: $97",
         "Paleta de Colores Personalizada - Valor: $67",
         "Instalación en tu Dominio - Valor: $97",
@@ -52,7 +52,7 @@ export const translations = {
       packageValue: "Valor Total del Paquete Completo:",
       specialPrice: "Precio Especial Hoy:",
       paymentNote: "Pago único • Sin cargos ocultos • Sin mensualidades",
-      ctaButton: "OBTENER MI SALES PAGE POR SOLO $49.99",
+      ctaButton: "OBTENER MI LANDING PAGE POR SOLO $49.99",
       securePayment: "💳 Pago 100% seguro a través de Hotmart",
       guarantee: "Garantía de 7 días o te devolvemos tu dinero"
     },
@@ -63,7 +63,7 @@ export const translations = {
       headline1: "TU ACCESO INSTANTÁNEO A",
       headline2: "TODO ESTO:",
       items: [
-        { text: "Sales Page Profesional de Alta Conversión", value: "$240" },
+        { text: "Landing Page Profesional de Alta Conversión", value: "$240" },
         { text: "Guía de Copywriting en PDF", value: "$97" },
         { text: "Paleta de Colores Personalizada", value: "$67" },
         { text: "Instalación en tu Dominio", value: "$97" },
@@ -71,7 +71,7 @@ export const translations = {
       ],
       normalValue: "Valor Normal:",
       specialPrice: "Precio Especial Hoy:",
-      ctaButton: "OBTENER MI SALES PAGE POR SOLO $49.99",
+      ctaButton: "OBTENER MI LANDING PAGE POR SOLO $49.99",
       paymentNote: "💳 Pago 100% seguro • Garantía de 7 días",
       trust1: "Pago Seguro con Hotmart",
       trust2: "Entrega en 48 horas",
@@ -84,7 +84,7 @@ export const translations = {
     // Checkout Section
     checkout: {
       title: "Completa Tu Orden",
-      subtitle: "Tu sales page profesional está a solo un paso. Completa tu información de pago de forma segura.",
+      subtitle: "Tu landing page profesional está a solo un paso. Completa tu información de pago de forma segura.",
       trust1: "Pago 100% Seguro",
       trust2: "Entrega en 48 Horas",
       trust3: "Múltiples Métodos de Pago",
