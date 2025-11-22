@@ -190,7 +190,7 @@ export const translations = {
       subtitle: "Todo lo que necesitas para que tu nueva landing page convierta desde el primer día",
       items: [
         {
-          title: "Sistema de 'Smart Checkout' Geclocalizado",
+          title: "Sistema de 'Smart Checkout' Geolocalizado",
           description: "Tecnología inteligente que adapta la pasarela de pago según el país del visitante (Hotmart para Latam, Stripe/PayPal para el resto del mundo) para maximizar tus ventas.",
           value: "$197"
         },
