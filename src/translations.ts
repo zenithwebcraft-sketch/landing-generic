@@ -550,14 +550,25 @@ export const translations = {
   }
 };
 
-// Hook para usar traducciones
+// 3. El Hook modificado (AQUÍ ES DONDE VA EL CAMBIO)
 export const useTranslation = () => {
   const detectLanguage = (): Language => {
+    // A. Revisar si Vercel nos está forzando un idioma (Latam = 'es')
+    const forcedLang = import.meta.env.VITE_FORCE_LANG;
+    
+    // Validamos que sea un idioma válido ('es' o 'en')
+    if (forcedLang === 'es' || forcedLang === 'en') {
+      return forcedLang;
+    }
+
+    // B. Si no hay variable de entorno, usar el navegador (USA/Global)
     const browserLang = navigator.language.toLowerCase();
     return browserLang.startsWith('es') ? 'es' : 'en';
   };
 
   const language = detectLanguage();
+  
+  // Aquí accedemos al objeto 'translations' que está definido arriba
   const t = translations[language];
 
   return { t, language };

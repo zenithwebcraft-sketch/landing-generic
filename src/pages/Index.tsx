@@ -9,7 +9,10 @@ import FAQSection from "@/components/FAQSection";
 import CheckoutSection from '@/components/CheckoutSection';
 import Footer from "@/components/Footer";
 
+type CheckoutMode = 'embedded' | 'hotmart';
+
 const Index = () => {
+  const defaultPaymentMode = (import.meta.env.VITE_DEFAULT_PAYMENT_MODE as CheckoutMode) || 'embedded';
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />
@@ -22,6 +25,7 @@ const Index = () => {
         <CTASection />
         <FAQSection />
         <CheckoutSection />
+        <CheckoutSection defaultMode={defaultPaymentMode} />
         <Footer />
       </div>
     </div>

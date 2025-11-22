@@ -4,10 +4,10 @@ import { useTranslation } from '@/translations';
 type CheckoutMode = 'embedded' | 'hotmart';
 
 interface CheckoutSectionProps {
-  defaultMode: CheckoutMode; // Para Landing A o Landing B
+  defaultMode?: 'embedded' | 'hotmart'; // Hacemos que sea opcional por seguridad
 }
 
-const CheckoutSection = ({ defaultMode }: CheckoutSectionProps) => {
+const CheckoutSection = ({ defaultMode = 'embedded' }: CheckoutSectionProps) => {
   const { t } = useTranslation();
 
   return (
