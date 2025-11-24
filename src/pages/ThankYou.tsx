@@ -64,11 +64,6 @@ const ThankYouPage = () => {
                     <p className="text-gray-300 mb-3">
                       {t.thankYou.step2Text}
                     </p>
-                    <ul className="text-gray-400 text-sm space-y-1 ml-4">
-                      {t.thankYou.step2Items.map((item, index) => (
-                        <li key={index}>• {item}</li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
 
