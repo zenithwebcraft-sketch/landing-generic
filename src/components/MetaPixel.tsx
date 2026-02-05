@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
-
-interface MetaPixelProps {
-  pixelId?: string; // Opcional, agregar cuando lo tengas
-}
+import { integrationsConfig } from '@/config/integrations.config';
+import { variablesConfig } from '@/config/variables.config';
 
 declare global {
   interface Window {
@@ -11,13 +9,15 @@ declare global {
   }
 }
 
-const MetaPixel = ({ pixelId }: MetaPixelProps) => {
+const MetaPixel = () => {
   useEffect(() => {
-    // Si no hay pixelId, no hacer nada (por ahora)
-    if (!pixelId) {
-      console.log('Meta Pixel: No pixel ID provided yet');
+    // Solo inicializar si está habilitado y hay pixelId
+    if (!integrationsConfig.metaPixel.enabled || !integrationsConfig.metaPixel.pixelId) {
+      console.log('Meta Pixel: Disabled or no pixel ID configured');
       return;
     }
+
+    const pixelId = integrationsConfig.metaPixel.pixelId;
 
     // Inicializar Meta Pixel
     (function(f: any, b: any, e: any, v: any, n?: any, t?: any, s?: any) {
@@ -50,40 +50,47 @@ const MetaPixel = ({ pixelId }: MetaPixelProps) => {
     window.fbq('track', 'PageView');
 
     console.log(`Meta Pixel initialized: ${pixelId}`);
-  }, [pixelId]);
+  }, []);
 
   return null;
 };
 
-// Funciones helper para trackear eventos
+// Funciones helper para trackear eventos (usando variables genéricas)
 export const trackEvent = (eventName: string, params?: object) => {
-  if (window.fbq) {
+  if (window.fbq && integrationsConfig.metaPixel.enabled) {
     window.fbq('track', eventName, params);
     console.log(`Meta Pixel event: ${eventName}`, params);
   }
 };
 
-export const trackViewContent = (contentName: string, value?: number) => {
+export const trackViewContent = (contentName?: string) => {
+  const price = parseFloat(variablesConfig.pricing.currentPrice.replace('$', ''));
+  const productName = contentName || variablesConfig.product.name;
+  
   trackEvent('ViewContent', {
-    content_name: contentName,
-    value: value || 49.99,
-    currency: 'USD'
+    content_name: productName,
+    value: price,
+    currency: variablesConfig.pricing.currency
   });
 };
 
 export const trackInitiateCheckout = () => {
+  const price = parseFloat(variablesConfig.pricing.currentPrice.replace('$', ''));
+  
   trackEvent('InitiateCheckout', {
-    value: 49.99,
-    currency: 'USD',
-    content_name: 'Sales Page Professional'
+    value: price,
+    currency: variablesConfig.pricing.currency,
+    content_name: variablesConfig.product.name
   });
 };
 
-export const trackPurchase = (value: number = 49.99) => {
+export const trackPurchase = (customValue?: number) => {
+  const price = customValue || parseFloat(variablesConfig.pricing.currentPrice.replace('$', ''));
+  
   trackEvent('Purchase', {
-    value: value,
-    currency: 'USD',
-    content_name: 'Sales Page Professional'
+    value: price,
+    currency: variablesConfig.pricing.currency,
+    content_name: variablesConfig.product.name
   });
 };
 

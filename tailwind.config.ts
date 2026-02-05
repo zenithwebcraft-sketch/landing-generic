@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import themeConfig from "./src/config/theme.config";
 
 export default {
   darkMode: ["class"],
@@ -25,8 +26,8 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#D4AF37", // Golden - ZenithWebCraft primary color
-          foreground: "#1a1a1a", // Dark gray for text on golden
+          DEFAULT: themeConfig.colors.primary.DEFAULT, // Usando config
+          foreground: themeConfig.colors.primary.foreground, // Usando config
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

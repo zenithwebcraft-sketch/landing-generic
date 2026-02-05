@@ -8,11 +8,14 @@ import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CheckoutSection from '@/components/CheckoutSection';
 import Footer from "@/components/Footer";
+import { integrationsConfig } from "@/config/integrations.config";
 
 type CheckoutMode = 'embedded' | 'hotmart';
 
 const Index = () => {
-  const defaultPaymentMode = (import.meta.env.VITE_DEFAULT_PAYMENT_MODE as CheckoutMode) || 'embedded';
+  // Usar defaultMode de integrations.config.ts
+  const defaultPaymentMode: CheckoutMode = integrationsConfig.hotmart.defaultMode;
+  
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />

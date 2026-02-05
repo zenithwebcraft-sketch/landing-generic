@@ -1,16 +1,17 @@
 import { useEffect, useRef } from 'react';
+import { integrationsConfig } from '@/config/integrations.config';
 
 /**
  * Componente de Checkout Embebido de Hotmart
  * Integra el checkout directamente en la landing page
  */
 const HotmartCheckout = () => {
-  const checkoutRef = useRef(null);
-  const elementsRef = useRef(null);
+  const checkoutRef = useRef<HTMLDivElement>(null);
+  const elementsRef = useRef<any>(null);
 
   useEffect(() => {
     // Cargar el script de Hotmart si no está presente
-    const loadHotmartScript = () => {
+    const loadHotmartScript = (): Promise<void> => {
       return new Promise((resolve, reject) => {
         // Verificar si el script ya está cargado
         if (window.checkoutElements) {
@@ -33,12 +34,12 @@ const HotmartCheckout = () => {
         await loadHotmartScript();
         
         // Esperar un momento para asegurar que checkoutElements está disponible
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise<void>(resolve => setTimeout(resolve, 100));
 
         if (window.checkoutElements && checkoutRef.current) {
-          // Inicializar el checkout embebido
+          // Inicializar el checkout embebido usando productCode de config
           elementsRef.current = window.checkoutElements.init('inlineCheckout', {
-            offer: '43vz0ocq'
+            offer: integrationsConfig.hotmart.productCode
           });
 
           // Montar el checkout en el div

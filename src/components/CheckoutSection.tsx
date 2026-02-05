@@ -1,10 +1,11 @@
 import CheckoutToggle from './CheckoutToggle';
 import { useTranslation } from '@/translations';
+import './CheckoutSection.css';
 
 type CheckoutMode = 'embedded' | 'hotmart';
 
 interface CheckoutSectionProps {
-  defaultMode?: 'embedded' | 'hotmart'; // Hacemos que sea opcional por seguridad
+  defaultMode?: 'embedded' | 'hotmart';
 }
 
 const CheckoutSection = ({ defaultMode = 'embedded' }: CheckoutSectionProps) => {
@@ -62,149 +63,6 @@ const CheckoutSection = ({ defaultMode = 'embedded' }: CheckoutSectionProps) => 
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .checkout-section {
-          padding: 80px 20px;
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .checkout-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, #D4AF37, transparent);
-        }
-
-        .checkout-container {
-          max-width: 900px;
-          margin: 0 auto;
-        }
-
-        .checkout-header {
-          text-align: center;
-          margin-bottom: 60px;
-        }
-
-        .checkout-title {
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: #1a1a1a;
-          margin-bottom: 16px;
-          font-family: 'Archivo Black', sans-serif;
-        }
-
-        .checkout-subtitle {
-          font-size: 1.125rem;
-          color: #6c757d;
-          max-width: 600px;
-          margin: 0 auto 40px;
-          line-height: 1.6;
-        }
-
-        .trust-badges {
-          display: flex;
-          justify-content: center;
-          gap: 40px;
-          flex-wrap: wrap;
-          margin-top: 40px;
-        }
-
-        .trust-badge {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          color: #495057;
-          font-size: 0.9rem;
-          font-weight: 600;
-        }
-
-        .trust-icon {
-          width: 24px;
-          height: 24px;
-          color: #D4AF37;
-        }
-
-        .checkout-content {
-          background: white;
-          border-radius: 16px;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-          padding: 40px;
-          margin-bottom: 40px;
-        }
-
-        .checkout-footer {
-          text-align: center;
-        }
-
-        .guarantee-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 16px;
-          background: white;
-          padding: 24px 32px;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-          text-align: left;
-        }
-
-        .guarantee-icon {
-          width: 48px;
-          height: 48px;
-          color: #D4AF37;
-          flex-shrink: 0;
-        }
-
-        .guarantee-badge h4 {
-          font-size: 1.125rem;
-          font-weight: 700;
-          color: #1a1a1a;
-          margin: 0 0 4px 0;
-        }
-
-        .guarantee-badge p {
-          font-size: 0.875rem;
-          color: #6c757d;
-          margin: 0;
-        }
-
-        @media (max-width: 768px) {
-          .checkout-section {
-            padding: 60px 16px;
-          }
-
-          .checkout-title {
-            font-size: 2rem;
-          }
-
-          .checkout-subtitle {
-            font-size: 1rem;
-          }
-
-          .trust-badges {
-            gap: 24px;
-          }
-
-          .trust-badge {
-            font-size: 0.85rem;
-          }
-
-          .checkout-content {
-            padding: 24px 16px;
-          }
-
-          .guarantee-badge {
-            flex-direction: column;
-            text-align: center;
-            padding: 20px;
-          }
-        }
-      `}</style>
     </section>
   );
 };
